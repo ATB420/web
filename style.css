@@ -1,0 +1,127 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.middle{
+  position: relative;
+  max-width: 500px;
+  max-height: 500px;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.middle .forms{
+  display: flex;
+  align-items: center;
+  width: 200%;
+  height: 425px;
+  transition: height 0.2s ease;
+}
+.middle .form{
+  width: 50%;
+  padding: 20px;
+  background-color: transparent;
+  transition: margin-left 0.18s ease;
+}
+.middle.active .login{
+  margin-left: -50%;
+  opacity: 0;
+  transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+.middle .signup{
+  opacity: 0;
+  transition: opacity 0.09s ease;
+}
+
+.middle.active .signup{
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.middle.active .forms{
+  height: 508px;
+}
+.middle .form .title{
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+}
+.form .title::before{
+  content: '';
+  background-color: black;
+  border-radius: 25px;
+}
+.form .input-field{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+.input-field input{
+  position: absolute;
+  border-radius: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-bottom: 2px solid cadetblue;
+  transition: all 0.2s ease;
+}
+
+.input-field i{
+ position: absolute;
+ top: 50%;
+ transform: translateY(-50%);
+ color :#999;
+ font-size: 23px;
+ transition: all 0.2s ease;
+}
+.input-field input:is(:focus, :valid) ~ i{
+  color: #747c75;
+}
+
+.input-field i.icon{
+  left: 0;
+}
+.input-field i.showHidePw{
+  right: 0;
+  cursor: pointer;
+  padding:  10px;
+}
+.form .text{
+  color: #333;
+  font-size: 14px;
+}
+.form a.text{
+  color:#747c75 ;
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+.form .button{
+  margin-top: 35px;
+}
+.form .button input{
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  background-color: cadetblue;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
